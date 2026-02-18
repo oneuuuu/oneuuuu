@@ -1,0 +1,120 @@
+name: Update Rabbitsay Quote
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate rabbitsay and update README
+        run: |
+          python3 << 'PYTHON'
+          import random, textwrap, re, json
+          from urllib.request import urlopen
+
+          FALLBACK_QUOTES = [
+              "Talk is cheap. Show me the code.",
+              "The best way to predict the future is to invent it.",
+              "Any sufficiently advanced technology is indistinguishable from magic.",
+              "Simplicity is the ultimate sophistication.",
+              "First, solve the problem. Then, write the code.",
+              "Programs must be written for people to read, and only incidentally for machines to execute.",
+              "The most dangerous phrase in the language is: We've always done it this way.",
+              "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.",
+              "In the middle of difficulty lies opportunity.",
+              "The only true wisdom is in knowing you know nothing.",
+              "It is not that I'm so smart. But I stay with the questions much longer.",
+              "Imagination is more important than knowledge.",
+              "Debugging is twice as hard as writing the code in the first place.",
+              "The function of good software is to make the complex appear to be simple.",
+              "What one programmer can do in one month, two programmers can do in two months.",
+              "Science is what we understand well enough to explain to a computer. Art is everything else we do.",
+              "The question of whether a computer can think is no more interesting than whether a submarine can swim.",
+              "Controlling complexity is the essence of computer programming.",
+              "A language that doesn't affect the way you think about programming is not worth knowing.",
+              "Make it work, make it right, make it fast.",
+              "Code is like humor. When you have to explain it, it's bad.",
+              "One of my most productive days was throwing away 1000 lines of code.",
+              "There are only two hard things in Computer Science: cache invalidation and naming things.",
+              "I'm not a great programmer; I'm just a good programmer with great habits.",
+              "Measuring programming progress by lines of code is like measuring aircraft building progress by weight.",
+              "The most disastrous thing that you can ever learn is your first programming language.",
+              "Before software can be reusable it first has to be usable.",
+              "The best error message is the one that never shows up.",
+              "Computers are useless. They can only give you answers.",
+              "We can only see a short distance ahead, but we can see plenty there that needs to be done.",
+              "The purpose of software engineering is to control complexity, not to create it.",
+              "Premature optimization is the root of all evil.",
+              "Intelligence is the ability to avoid doing work, yet getting the work done.",
+              "Every great developer you know got there by solving problems they were unqualified to solve.",
+              "Weeks of coding can save you hours of planning.",
+          ]
+
+          def get_quote():
+              try:
+                  response = urlopen("https://zenquotes.io/api/random", timeout=10)
+                  data = json.loads(response.read().decode())
+                  if data and data[0].get("q"):
+                      print(f"Got quote from ZenQuotes API")
+                      return data[0]["q"]
+              except Exception as e:
+                  print(f"API failed ({e}), using fallback")
+              return random.choice(FALLBACK_QUOTES)
+
+          RABBIT = r"""    \
+               \
+                (\_/)
+                ( •_•)
+                / >  <"""
+
+          def rabbitsay(text, max_width=46):
+              lines = textwrap.wrap(text, width=max_width)
+              width = max(len(line) for line in lines)
+
+              border_top = " " + "_" * (width + 2)
+              border_bot = " " + "-" * (width + 2)
+
+              parts = [border_top]
+              if len(lines) == 1:
+                  parts.append(f"< {lines[0]:<{width}} >")
+              else:
+                  for i, line in enumerate(lines):
+                      if i == 0:
+                          parts.append(f"/ {line:<{width}} \\")
+                      elif i == len(lines) - 1:
+                          parts.append(f"\\ {line:<{width}} /")
+                      else:
+                          parts.append(f"| {line:<{width}} |")
+              parts.append(border_bot)
+              return "\n".join(parts) + "\n" + RABBIT
+
+          quote = get_quote()
+          art = rabbitsay(quote)
+
+          with open("README.md", "r") as f:
+              content = f.read()
+
+          new_section = f"<!-- RABBITSAY START -->\n\n```\n{art}\n```\n\n<!-- RABBITSAY END -->"
+          pattern = r"<!-- RABBITSAY START -->.*?<!-- RABBITSAY END -->"
+          content = re.sub(pattern, new_section, content, flags=re.DOTALL)
+
+          with open("README.md", "w") as f:
+              f.write(content)
+
+          print(art)
+          print("README updated!")
+          PYTHON
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git diff --quiet README.md || (git add README.md && git commit -m "🐰 Update rabbitsay quote" && git push)

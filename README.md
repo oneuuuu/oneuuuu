@@ -1,5 +1,18 @@
-<p align="center">
+<div align="center">
 
+<!-- RABBITSAY START -->
 
-  <img src='https://github-readme-stats-fast.vercel.app/api/top-langs/?username=oneuuuu&langs_count=10&layout=compact&hide=scss,ruby' alt='Top Langs'>
-</p>
+```
+ ________________________________________________
+/ Talk is cheap. Show me the code.               \
+ ------------------------------------------------
+    \
+     \
+      (\_/)
+      ( •_•)
+      / >  <
+```
+
+<!-- RABBITSAY END -->
+
+</div>
