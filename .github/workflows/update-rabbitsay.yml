@@ -2,7 +2,7 @@ name: Update Rabbitsay Quote
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *' # Daily at midnight UTC/ 8am UTC+8
   workflow_dispatch:
 
 permissions:
