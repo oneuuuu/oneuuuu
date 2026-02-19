@@ -3,9 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ________________________________________
-< Your success and happiness lie in you. >
- ----------------------------------------
+ ________________________________________________
+/ Follow your heart, listen to your inner voice, \
+\ stop caring about what others think.           /
+ ------------------------------------------------
     \
      \
       (\_/)
