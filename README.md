@@ -3,10 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ________________________________________________
-/ Follow your heart, listen to your inner voice, \
-\ stop caring about what others think.           /
- ------------------------------------------------
+ ______________________________________________
+/ Riches don't make a man rich, they only make \
+\ him busier.                                  /
+ ----------------------------------------------
     \
      \
       (\_/)
