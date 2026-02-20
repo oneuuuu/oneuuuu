@@ -3,10 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ______________________________________________
-/ Riches don't make a man rich, they only make \
-\ him busier.                                  /
- ----------------------------------------------
+ _______________________________________________
+/ Everything you've ever wanted is on the other \
+\ side of fear.                                 /
+ -----------------------------------------------
     \
      \
       (\_/)
