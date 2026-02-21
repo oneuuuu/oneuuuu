@@ -4,8 +4,8 @@
 
 ```
  _______________________________________________
-/ Everything you've ever wanted is on the other \
-\ side of fear.                                 /
+/ Victory is always possible for the person who \
+\ refuses to stop fighting.                     /
  -----------------------------------------------
     \
      \
