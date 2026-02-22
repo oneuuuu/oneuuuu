@@ -3,10 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- _______________________________________________
-/ Victory is always possible for the person who \
-\ refuses to stop fighting.                     /
- -----------------------------------------------
+ ____________________________________________
+/ Life has more imagination than we carry in \
+\ our dreams.                                /
+ --------------------------------------------
     \
      \
       (\_/)
