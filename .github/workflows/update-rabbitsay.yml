@@ -75,7 +75,7 @@ jobs:
                 ( •_•)
                 / >  <"""
 
-          def rabbitsay(text, max_width=44):
+          def rabbitsay(text, max_width=42):
               lines = textwrap.wrap(text, width=max_width)
               width = max(len(line) for line in lines)
 
