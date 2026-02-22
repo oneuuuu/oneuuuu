@@ -3,10 +3,12 @@
 <!-- RABBITSAY START -->
 
 ```
- _____________________________________
-/ What loneliness is more lonely than \
-\ distrust?                           /
- -------------------------------------
+ __________________________________________
+/ It's not what you say out of your mouth  \
+| that determines your life, it's what you |
+| whisper to yourself that has the most    |
+\ power!                                   /
+ ------------------------------------------
     \
      \
       (\_/)
