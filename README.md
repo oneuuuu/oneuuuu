@@ -3,11 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ________________________________________
-/ He who loses wealth loses much; he who \
-| loses a friend loses more; but he that |
-\ loses his courage loses all.           /
- ----------------------------------------
+ _______________________________________
+/ Success is achieved and maintained by \
+\ those who try and keep trying.        /
+ ---------------------------------------
     \
      \
       (\_/)
