@@ -3,9 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ___________________________________________
-< Either get busy living or get busy dying. >
- -------------------------------------------
+ ________________________________________
+/ Life is a succession of lessons, which \
+\ must be lived to be understood.        /
+ ----------------------------------------
     \
      \
       (\_/)
