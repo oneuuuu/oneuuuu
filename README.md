@@ -3,9 +3,10 @@
 <!-- RABBITSAY START -->
 
 ```
- ________________________________________
-< The destiny of man is in his own soul. >
- ----------------------------------------
+ _______________________________________
+/ To handle yourself, use your head; to \
+\ handle others, use your heart.        /
+ ---------------------------------------
     \
      \
       (\_/)
